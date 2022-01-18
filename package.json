@@ -1,0 +1,27 @@
+{
+  "name": "fullstackjs-app",
+  "version": "1.0.0",
+  "description": "Combining the frontend and backend technologies I created a fullstack web and desktop application that you can run both in your SO or  browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hernan1ro/fullstackjs-app.git"
+  },
+  "keywords": [],
+  "author": "Hernán Mercado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hernan1ro/fullstackjs-app/issues"
+  },
+  "homepage": "https://github.com/Hernan1ro/fullstackjs-app#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
