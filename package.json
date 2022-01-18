@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/Hernan1ro/fullstackjs-app#readme",
   "dependencies": {
-    "express": "^4.17.2",
-    "mongoose": "^6.1.7"
+    "express": "^4.17.1",
+    "mongoose": "^5.7.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^1.19.4"
   }
 }
