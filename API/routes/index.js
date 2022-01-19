@@ -8,5 +8,8 @@ module.exports = function () {
 
   // Obtiene todos los registros de pacientes en la body
   router.get("/pacientes", pacientesController.obtenerPacientes);
+
+  // Obtiene un paciente en especifico
+  router.get("/pacientes/:id", pacientesController.obtenerPaciente);
   return router;
 };
