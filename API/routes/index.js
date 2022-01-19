@@ -14,5 +14,8 @@ module.exports = function () {
 
   // Actualizar un registro con un Id especifico
   router.put("/pacientes/:id", pacientesController.actualizarPaciente);
+
+  // Elimina un paciente por su ID
+  router.delete("/pacientes/:id", pacientesController.borrarPaciente);
   return router;
 };
