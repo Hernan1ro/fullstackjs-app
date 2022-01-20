@@ -20,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Pacientes />} />
+        <Route path="/" element={<Pacientes citas={citas} />} />
         <Route path="/nuevacita" element={<NuevaCita />} />
         <Route path="/cita/:id" element={<Cita />} />
       </Routes>
