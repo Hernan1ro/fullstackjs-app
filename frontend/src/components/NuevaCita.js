@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NuevaCita = () => {
+  // Generar state como objeto
+  const [cita, setCita] = useState({
+    nombre: "",
+    propietario: "",
+    fecha: "",
+    hora: "",
+    telefono: "",
+    sintomas: "",
+  });
+
+  //  Lee los datos del usuario
+  const actualizarState = (e) => {
+    setCita({ ...cita, [e.target.name]: e.target.value });
+  };
   return (
     <>
       <h1 className="my-5">Crear nueva cita</h1>
@@ -26,6 +40,7 @@ const NuevaCita = () => {
                   id="nombre"
                   name="nombre"
                   placeholder="Nombre Mascota"
+                  onChange={actualizarState}
                 />
               </div>
 
@@ -37,6 +52,7 @@ const NuevaCita = () => {
                   id="propietario"
                   name="propietario"
                   placeholder="Nombre Propietario"
+                  onChange={actualizarState}
                 />
               </div>
 
@@ -48,6 +64,7 @@ const NuevaCita = () => {
                   id="telefono"
                   name="telefono"
                   placeholder="Teléfono"
+                  onChange={actualizarState}
                 />
               </div>
 
@@ -58,6 +75,7 @@ const NuevaCita = () => {
                   className="form-control form-control-lg"
                   id="fecha"
                   name="fecha"
+                  onChange={actualizarState}
                 />
               </div>
 
@@ -68,6 +86,7 @@ const NuevaCita = () => {
                   className="form-control form-control-lg"
                   id="hora"
                   name="hora"
+                  onChange={actualizarState}
                 />
               </div>
 
@@ -77,6 +96,7 @@ const NuevaCita = () => {
                   className="form-control"
                   name="sintomas"
                   rows="6"
+                  onChange={actualizarState}
                 ></textarea>
               </div>
 
