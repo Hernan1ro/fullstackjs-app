@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import clienteAxios from "../config/axios";
 
-const NuevaCita = () => {
+const NuevaCita = (props) => {
+  console.log(props);
   const navigate = useNavigate();
   // Generar state como objeto
   const [cita, setCita] = useState({
@@ -27,7 +28,7 @@ const NuevaCita = () => {
     clienteAxios
       .post("/pacientes", cita)
       .then((res) => {
-        console.log(res);
+        props.setConsultar(true);
         navigate("/");
       })
       .catch((err) => console.log(err));
