@@ -16,7 +16,7 @@ function App() {
         .catch((err) => console.error(err));
     };
     consultarAPI();
-  }, []);
+  }, [citas]);
   return (
     <BrowserRouter>
       <Routes>

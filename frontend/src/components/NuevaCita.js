@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import clienteAxios from "../config/axios";
 
 const NuevaCita = () => {
+  const navigate = useNavigate();
   // Generar state como objeto
   const [cita, setCita] = useState({
     nombre: "",
@@ -15,6 +17,20 @@ const NuevaCita = () => {
   //  Lee los datos del usuario
   const actualizarState = (e) => {
     setCita({ ...cita, [e.target.name]: e.target.value });
+  };
+
+  // Enviar una petición a la API
+  const crearNuevacita = (e) => {
+    e.preventDefault();
+
+    // Enviar la petición por axios
+    clienteAxios
+      .post("/pacientes", cita)
+      .then((res) => {
+        console.log(res);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <>
@@ -31,7 +47,7 @@ const NuevaCita = () => {
             </Link>
           </div>
           <div className="col-md-8 mx-auto">
-            <form className="bg-white p-5 bordered">
+            <form onSubmit={crearNuevacita} className="bg-white p-5 bordered">
               <div className="form-group">
                 <label htmlFor="nombre">Nombre Mascota</label>
                 <input
