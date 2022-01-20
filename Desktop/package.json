@@ -1,0 +1,15 @@
+{
+  "name": "fullstack-app.js",
+  "version": "1.0.0",
+  "description": "Aplicación de electron",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js"
+  },
+  "keywords": [],
+  "author": "Hernán Mercado",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^16.0.7"
+  }
+}
