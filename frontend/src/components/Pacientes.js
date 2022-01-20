@@ -20,9 +20,9 @@ const Pacientes = ({ citas }) => {
           <div className="col-md-8 mx-auto">
             <div className="list-group">
               {citas.map((cita) => (
-                <a
-                  href="#"
-                  key={citas.id}
+                <Link
+                  to={`/cita/${cita._id}`}
+                  key={cita._id}
                   className="p-5 list-group-item list-group-item-action flex-column align-items-start"
                 >
                   <div className="d-flex w-100 justify-content-between mb-4">
@@ -36,7 +36,7 @@ const Pacientes = ({ citas }) => {
                     <p>Dueño: {cita.propietario}</p>
                     <p>Telefono: {cita.telefono}</p>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

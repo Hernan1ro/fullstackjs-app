@@ -5,7 +5,7 @@ import Pacientes from "./components/Pacientes";
 import NuevaCita from "./components/NuevaCita";
 import Cita from "./components/Cita";
 
-function App() {
+function App(props) {
   // State de la aplicación
   const [citas, setCitas] = useState([]);
   const [consultar, setConsultar] = useState(true);
