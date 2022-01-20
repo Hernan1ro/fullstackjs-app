@@ -4,12 +4,14 @@
   "description": "Aplicación de electron",
   "main": "index.js",
   "scripts": {
-    "start": "electron index.js"
+    "start": "electron index.js",
+    "dist": "electron-builder -w"
   },
   "keywords": [],
   "author": "Hernán Mercado",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^16.0.7"
+    "electron": "^16.0.7",
+    "electron-builder": "^22.14.5"
   }
 }

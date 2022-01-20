@@ -11,6 +11,7 @@ function crearVentana() {
     minHeight: 600,
     center: true,
     show: false,
+    icon: "icon.png",
   });
 
   // Cuando la aplicación es cerrada
