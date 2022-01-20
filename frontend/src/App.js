@@ -34,7 +34,10 @@ function App(props) {
           path="/nuevacita"
           element={<NuevaCita setConsultar={setConsultar} />}
         />
-        <Route path="/cita/:id" element={<Cita />} />
+        <Route
+          path="/cita/:id"
+          element={<Cita setConsultar={setConsultar} />}
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import clienteAxios from "../config/axios";
 
-const Cita = () => {
+const Cita = ({ setConsultar }) => {
   const [cita, setCita] = useState({});
   const { id } = useParams();
   const navigate = useNavigate();
@@ -19,7 +19,20 @@ const Cita = () => {
     };
     consultarCita();
   }, []);
-  const { nombre, propietario, telefono, fecha, hora, sintomas } = cita;
+  const { nombre, propietario, telefono, fecha, hora, sintomas, _id } = cita;
+
+  const eliminarCita = (id) => {
+    clienteAxios
+      .delete(`/pacientes/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setConsultar(true);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       <h1 className="my-5">Nombre cita: {nombre}</h1>
@@ -52,6 +65,9 @@ const Cita = () => {
                   <button
                     className="text-uppercase py-2 px-5 font-weight-bold btn btn-danger col"
                     type="button"
+                    onClick={() => {
+                      eliminarCita(_id);
+                    }}
                   >
                     Eliminar &times;
                   </button>
