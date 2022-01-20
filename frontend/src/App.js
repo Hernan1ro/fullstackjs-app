@@ -12,7 +12,7 @@ function App() {
     const consultarAPI = () => {
       clienteAxios
         .get("/pacientes")
-        .then((res) => console.log(res))
+        .then((res) => setCitas(res.data))
         .catch((err) => console.error(err));
     };
     consultarAPI();
